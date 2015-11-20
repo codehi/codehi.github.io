@@ -696,6 +696,17 @@ if (currentUser) {
       <div class="ui-block-d" style="border: 0px;float:none;display:inline-block; ">  <input type="submit"  onclick="three360()"  value="360"></div>
 
      </div><div style="clear:both"></div><br>
+     <div data-role="fieldcontain">
+    <textarea name="addinfo" id="info"></textarea>
+     <fieldset data-role="controlgroup">
+    <legend>类型:</legend>
+      <label for="code">代码</label>
+      <input type="radio" name="kind" id="code" value="代码">
+      <label for="other">其他</label>
+      <input type="radio" name="kind" id="other" value="其他"> 
+  </fieldset>
+  <button id="sendmessage">发表</button>
+  </div>
                         <ul data-role="listview">
                             <li><a href="http://163.com/">网易</a></li>
                             <li><a href="http://qq.com/">qq</a></li>
