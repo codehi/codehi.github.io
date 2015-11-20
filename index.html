@@ -381,7 +381,33 @@ if (currentUser) {
 						$("#lastPage").removeAttr("disabled");
 					}
 				};//结果页页码信息
-
+o.addTextmessage=function(str){
+		var alltextmessage=Bmob.Object.extend("alltextmessage");
+			        var UserTextMessage=Bmob.Object.extend("UserTextMessage");
+			        	var data={};
+			        		data.text=$("#add_info").val();
+			        		data.type=$("input[type='radio'][name='add-type']:checked").val()||"";
+			        		alltextmessage.save(data, {
+						success:function(){homeInfo("发表成功");lock=false;},
+						error:function(){homeInfo("发表失败");lock=false;}
+					});
+						var currentUser = Bmob.User.current();
+if (currentUser) {
+    // do stuff with the user
+     var  userdata={};userdata.userid=currentUser.id;
+				      	userdata.text=$("#add_info").val();
+				      	userdata.type=$("input[type='radio'][name='add-type']:checked").val()||"";
+				
+				      var useraddarticle=new	userarticleorsite();
+				      	UserTextMessage.save(userdata, {
+						success:function(){homeInfo("发表成功");lock=false;},
+						error:function(){homeInfo("发表失败");lock=false;}
+					});
+} else {
+    // show the signup or login page
+}
+			     
+}
 				o.addweb=function(){
 					if(lock)return;
 					lock=true;
@@ -802,6 +828,10 @@ if (currentUser) {
 				bmobTool.setLimit({});
 				bmobTool.findweb();
 			});
+			function(text){
+				
+			
+			}
 		</script>
 <!--结果页-->
 		<div data-role="page" id="result">
