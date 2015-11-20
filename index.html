@@ -387,7 +387,8 @@ o.addTextmessage=function(str){
 			        	var data={};
 			        		data.text=$("#addinfo").val();
 			        		data.type=$("input[type='radio'][name='kind']:checked").val()||"";
-			        		alltextmessage.save(data, {
+			        		var textmessag=new alltextmessage();
+			        		textmessag.save(data, {
 						success:function(){homeInfo("发表成功");lock=false;},
 						error:function(){homeInfo("发表失败");lock=false;}
 					});
@@ -398,8 +399,8 @@ if (currentUser) {
 				      	userdata.text=$("#addinfo").val();
 				      	userdata.type=$("input[type='radio'][name='kind']:checked").val()||"";
 				
-				      var useraddarticle=new	userarticleorsite();
-				      	UserTextMessage.save(userdata, {
+				      var useraddtxt=new	UserTextMessage();
+				      	useraddtxt.save(userdata, {
 						success:function(){homeInfo("发表成功");lock=false;},
 						error:function(){homeInfo("发表失败");lock=false;}
 					});
