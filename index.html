@@ -385,8 +385,8 @@ o.addTextmessage=function(str){
 		var alltextmessage=Bmob.Object.extend("alltextmessage");
 			        var UserTextMessage=Bmob.Object.extend("UserTextMessage");
 			        	var data={};
-			        		data.text=$("#add_info").val();
-			        		data.type=$("input[type='radio'][name='add-type']:checked").val()||"";
+			        		data.text=$("#addinfo").val();
+			        		data.type=$("input[type='radio'][name='kind']:checked").val()||"";
 			        		alltextmessage.save(data, {
 						success:function(){homeInfo("发表成功");lock=false;},
 						error:function(){homeInfo("发表失败");lock=false;}
@@ -395,8 +395,8 @@ o.addTextmessage=function(str){
 if (currentUser) {
     // do stuff with the user
      var  userdata={};userdata.userid=currentUser.id;
-				      	userdata.text=$("#add_info").val();
-				      	userdata.type=$("input[type='radio'][name='add-type']:checked").val()||"";
+				      	userdata.text=$("#addinfo").val();
+				      	userdata.type=$("input[type='radio'][name='kind']:checked").val()||"";
 				
 				      var useraddarticle=new	userarticleorsite();
 				      	UserTextMessage.save(userdata, {
@@ -723,7 +723,7 @@ if (currentUser) {
 
      </div><div style="clear:both"></div><br>
      <div data-role="fieldcontain">
-    <textarea name="addinfo" id="info"></textarea>
+    <textarea name="addinfo" id="addinfo"></textarea>
      <fieldset data-role="controlgroup">
     <legend>类型:</legend>
       <label for="code">代码</label>
@@ -828,10 +828,11 @@ if (currentUser) {
 				bmobTool.setLimit({});
 				bmobTool.findweb();
 			});
-			function(text){
-				
+				$("#sendmessage").bind("click",function(){
 			
-			}
+				bmobTool.addTextmessage();
+			});
+			
 		</script>
 <!--结果页-->
 		<div data-role="page" id="result">
