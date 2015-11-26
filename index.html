@@ -19,7 +19,11 @@
     
         div.search {
         }
-
+.myh3
+{
+ word-wrap: break-word !important;
+ white-space: normal !important;
+}
             div.search img, div.search div.text, div.search input.but {
             }
 
@@ -594,7 +598,7 @@ query.find({
 					                tmpli = document.createElement("li");
 					                dom1 = document.createElement("h3");
 					                $(dom1).text(results[i].get("text"));
-					                 dom1.style="white-space:pre-wrap;";
+					                 $(dom1).className="myh3";
 					                $(tmpli).append(dom1);
 					               
 					                $("#messagelist").append(tmpli);
