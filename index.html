@@ -596,8 +596,9 @@ query.find({
 					                var tmpli, tmpa, dom1, dom2;
 					                tmpli = document.createElement("li");
 					                dom1 = document.createElement("h3");
+					                  $(dom1).addClass("myh3");
 					                $(dom1).text(results[i].get("text"));
-					                 $(dom1).className="myh3";
+					               
 					                $(tmpli).append(dom1);
 					               
 					                $("#messagelist").append(tmpli);
