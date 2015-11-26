@@ -19,9 +19,8 @@
     
         div.search {
         }
-.myh3
-{
-white-space:pre-wrap;
+.wrap {
+    white-space: normal !important;
 }
             div.search img, div.search div.text, div.search input.but {
             }
@@ -596,7 +595,7 @@ query.find({
 					                var tmpli, tmpa, dom1, dom2;
 					                tmpli = document.createElement("li");
 					                dom1 = document.createElement("p");
-					                  $(dom1).addClass("myh3");
+					                  $(dom1).addClass("wrap");
 					                $(dom1).text(results[i].get("text"));
 					               
 					                $(tmpli).append(dom1);
