@@ -608,7 +608,7 @@ query.find({
 					}
 				o.findarticle=function(){
 					//设定网站限制
-					var findquery = new Bmob.Query(l)
+					var findquery = new Bmob.Query(articleinfo)
 					findquery.ascending("articletitle");
 			//	if(limit.codelanguage)findquery.equalTo("codelanguage", limit.codelanguage);
 					var limit=o.getLimit();
