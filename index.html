@@ -589,6 +589,7 @@ query.find({
 					o.listmessage=function(){
 					    var textlist = Bmob.Object.extend("alltextmessage");
 					    var findquery = new Bmob.Query(textlist);
+					    	findquery.descending("createdAt");
 					    findquery.find({
 					        success: function (results) {
 					            for (i = 0; i < results.length; i++) {
