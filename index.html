@@ -393,7 +393,7 @@ o.addTextmessage=function(str){
 			        		data.type=$("input[type='radio'][name='kind']:checked").val()||"";
 			        		var textmessag=new alltextmessage();
 			        		textmessag.save(data, {
-						success:function(){homeInfo("发表成功");lock=false;},
+					//	success:function(){homeInfo("发表成功");lock=false;},
 						error:function(){homeInfo("发表失败");lock=false;}
 					});
 						var currentUser = Bmob.User.current();
@@ -405,8 +405,8 @@ if (currentUser) {
 
 				      var useraddtxt=new	UserTextMessage();
 				      	useraddtxt.save(userdata, {
-						success:function(){homeInfo("发表成功");lock=false;},
-						error:function(){homeInfo("发表失败");lock=false;}
+					//	success:function(){homeInfo("发表成功");lock=false;},
+					//	error:function(){homeInfo("发表失败");lock=false;}
 					});
 } else {
     // show the signup or login page
@@ -434,7 +434,7 @@ if (currentUser) {
 					var addweb = new info();
 					addweb.save(data, {
 						success:function(){homeInfo("分享成功");lock=false;},
-						error:function(){homeInfo("分享失败");lock=false;}
+					//	error:function(){homeInfo("分享失败");lock=false;}
 					});
 						var currentUser = Bmob.User.current();
 if (currentUser) {
@@ -478,8 +478,8 @@ if (currentUser) {
 					//分享文章
 					var addarticle = new articleinfo();
 					addarticle.save(articledata, {
-						success:function(){homeInfo("分享成功");lock=false;},
-						error:function(){homeInfo("分享失败");lock=false;}
+					//	success:function(){homeInfo("分享成功");lock=false;},
+					//	error:function(){homeInfo("分享失败");lock=false;}
 					});
 					var currentUser = Bmob.User.current();
 if (currentUser) {
@@ -490,8 +490,8 @@ if (currentUser) {
 					userdata.articleurl="http://"+$("#add-articleurl").val().replace(/.*\/\//,"");
 				      var useraddarticle=new	userarticleorsite();
 				      	useraddarticle.save(userdata, {
-						success:function(){homeInfo("分享成功");lock=false;},
-						error:function(){homeInfo("分享失败");lock=false;}
+					//	success:function(){homeInfo("分享成功");lock=false;},
+					//	error:function(){homeInfo("分享失败");lock=false;}
 					});
 } else {
     // show the signup or login page
